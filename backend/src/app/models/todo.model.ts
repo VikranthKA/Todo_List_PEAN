@@ -1,58 +1,51 @@
-import { Model,DataTypes } from 'sequelize';
+import { Model, DataTypes } from 'sequelize';
 import { sequelize } from '../../db/dbConfig';
-import { User } from './user.model';
 import { TodoAttributes } from '../interfaces/todo';
+import User from './user.model'; // Import User model correctly
 
-export class Todo extends Model<TodoAttributes> implements TodoAttributes{
+class Todo extends Model<TodoAttributes> implements TodoAttributes {
     public id!: number;
     public title!: string;
     public description!: string;
     public completed!: boolean;
     public createdBy!: number;
-  
+
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
 }
 
 Todo.init(
     {
-        id:{
-            type:DataTypes.INTEGER.UNSIGNED,
-            autoIncrement:true,
-            primaryKey:true
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
         },
-        title:{
-            type:DataTypes.STRING(128),
-            allowNull:false,
+        title: {
+            type: DataTypes.STRING(128),
+            allowNull: false,
         },
-        description:{
-            type:DataTypes.STRING(255),
-            allowNull:true
+        description: {
+            type: DataTypes.STRING(255),
+            allowNull: true,
         },
-        completed:{
-            type:DataTypes.BOOLEAN,
-            defaultValue:false,
+        completed: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false,
         },
-        createdBy:{
-            type:DataTypes.INTEGER,
-            references:{
-                model:User,
-                key:'id'
+        createdBy: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: User,
+                key: 'id',
             },
-            allowNull:false
-        }
-    },{
+            allowNull: false,
+        },
+    },
+    {
         sequelize,
-        tableName:'todos'
+        tableName: 'todos',
     }
-)
+);
 
-
-//RelationShip btw models
-Todo.belongsTo(User,{
-    foreignKey:'createdBy',as:'user'
-})
-
-User.hasMany(Todo,{
-    foreignKey:'createdBy',as:'todos'
-})
+export default Todo;

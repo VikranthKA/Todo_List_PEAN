@@ -5,7 +5,6 @@
   "scripts": {
     "start": "nodemon index.ts",
     "dev": "nodemon --exec ts-node src/index.ts",
-
     "access": "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass"
   },
   "keywords": [],
