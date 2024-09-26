@@ -8,7 +8,7 @@ class Todo extends Model<TodoAttributes> implements TodoAttributes {
     public title!: string;
     public description!: string;
     public completed!: boolean;
-    public createdBy!: number;
+    public createdBy!: string;
 
     public readonly createdAt!: Date;
     public readonly updatedAt!: Date;
@@ -34,7 +34,7 @@ Todo.init(
             defaultValue: false,
         },
         createdBy: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 model: User,
                 key: 'id',

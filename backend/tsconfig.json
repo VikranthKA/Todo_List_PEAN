@@ -1,13 +1,32 @@
+// {
+//   "compilerOptions": {
+//     "typeRoots": ["./node_modules/@types", "src/types"],
+//     "target": "ES6",
+//     "module": "commonjs",
+//     "outDir": "./dist",
+//     "rootDir": "./src",
+//     "strict": true,
+//     "esModuleInterop": true,
+//     "skipLibCheck": true
+//   },
+//   "include": ["src/**/*.ts", "src/index.ts", "src/@types/**/*"],
+
+//   "exclude": ["node_modules"]
+// }
+// 
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true
+      "target": "ES6",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "typeRoots": ["./node_modules/@types", "./src/types"]
+
   },
-  "include": ["src/**/*.ts", "src/index.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+      "src/**/*.ts",
+      "src/types/express.d.ts"  // Make sure this file is included
+  ]
 }

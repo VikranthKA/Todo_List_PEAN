@@ -3,7 +3,7 @@ export interface TodoAttributes{
     title:string;
     description?:string;
     completed?:boolean;
-    createdBy?:number;
+    createdBy?:string;
 }
 
 
