@@ -1,0 +1,29 @@
+<form action="" class="form" [formGroup]="registerData">
+    <h3 class="form__title">Register Form</h3>
+    <input type="text"
+    class="form__username" 
+    name="text" 
+    id="text" 
+    placeholder="soul society"
+    [formControl]="username"
+    />
+    <h3 class="form__error" [hidden]="username.valid || username.untouched">
+        Enter your name
+    </h3>
+    <input type="email" class="form__email" id="email" placeholder="abc@gamil.com" [formControl]="email">
+    <h3 class="form__error" [hidden]="email.valid || email.untouched">
+        Enter an email
+    </h3>
+    <input type="password"
+    class="form__password" 
+    name="text" 
+    id="text" 
+    placeholder="secret@123"
+    [formControl]="password"
+    />
+    <h5 class="form__error" [hidden]="password.valid || password.untouched">Password is required and must be greater than 6 letters</h5>
+    <div class="form__btn__group">
+        <button class="form__btn__success" (click)="register()" [disabled]="registerData.invalid">Register</button>
+
+    </div>
+</form>

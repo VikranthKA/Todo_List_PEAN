@@ -4,6 +4,7 @@ import {sequelize} from "./db/dbConfig"
 // const app:Express= express()
 
 
+
 export const startServer = async()=>{
     try {
         await sequelize.sync()

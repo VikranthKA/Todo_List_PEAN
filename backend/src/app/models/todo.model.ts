@@ -34,7 +34,7 @@ Todo.init(
             defaultValue: false,
         },
         createdBy: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             references: {
                 model: User,
                 key: 'id',

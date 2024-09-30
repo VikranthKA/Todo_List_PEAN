@@ -2,11 +2,15 @@ import { Request, Response } from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import User from '../models/user.model';
+import { validationResult } from 'express-validator';
 
 const JWT_SECRET = process.env.SECRET_KEY || 'your_jwt_secret_key';
 
 export const userSignUp = async (req: Request, res: Response) => {
-
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ error: errors.array() });
+    }
 
     try {
         // console.log(req.body,"body")
@@ -36,6 +40,10 @@ export const userSignUp = async (req: Request, res: Response) => {
 };
 
 export const userSignIn = async (req: Request, res: Response) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ error: errors.array() });
+    }
     try {
         const { email, password } = req.body;
 
