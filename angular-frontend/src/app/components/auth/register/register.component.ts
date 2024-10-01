@@ -36,9 +36,20 @@ export class RegisterComponent {
   })
 
   register():void{
-    this.authenticationService.register(this.userData).subscribe(()=>{
+    if(this.registerData.valid){
+      const formValues = this.registerData.value
+      const registerPayload = {
+        username:formValues.username as string,
+        email:formValues.email as string,
+        password:formValues.password as string
+
+
+      }
+
+      this.authenticationService.register(registerPayload).subscribe(()=>{
         this.router.navigate(['/todos'])
-    })
+      })
+    }
   }
 
 }

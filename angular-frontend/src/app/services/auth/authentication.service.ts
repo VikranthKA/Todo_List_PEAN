@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  private apiUrl = 'localhost:3333/api/v1/user'
+  private apiUrl = 'http://localhost:3333/api/v1/user'
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +19,7 @@ export class AuthenticationService {
     userId: number,
     email: string
   }> {
+    console.log("user",userData)
     return this.http.post<{
       token: string,
       userId: number,

@@ -1,1 +1,28 @@
-<p>login works!</p>
+<form action="" class="form-container" [formGroup]="loginForm">
+    <h3 class="login-text">Please Login!</h3>
+    <input type="email" 
+           name="email" 
+           id="email" 
+           placeholder="johndoe@gmail.com"
+           [formControl]="email"
+    />
+    <h5 class="error" [hidden]="email.valid || email.untouched">Enter an email</h5>
+    <input type="password" 
+    name="text" 
+    id="text" 
+    placeholder="secret@123"
+    [formControl]="password"
+    />
+    <h5 class="error" [hidden]="password.valid || password.untouched">Password is required and must be greater than 6 letters</h5>
+        <i class="fab fa-google google-icon"></i>
+
+
+    <div class="btn-group">
+
+        <button class="btn-success" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+    </div>
+
+
+
+
+</form>
