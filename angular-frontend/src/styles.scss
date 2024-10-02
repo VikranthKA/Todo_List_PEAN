@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import "mixsin.scss";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --color-primary: #0e79b2;
+    --color-secodary: #191923;
+    --color-light: #fbfef9;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+}
