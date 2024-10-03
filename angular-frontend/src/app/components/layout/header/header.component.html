@@ -1,8 +1,21 @@
-@if(isLogin()){
+<header class="nav__container">
+        <nav class="nav__container__links">
+            <ul class="nav__container__links_ul">
+                <li class="nav__container__links__link">Home</li>
+                @if(isLogin()){
+                    <li class="nav__container__links_ul__logged-in">
+                    <a routerLink="/create-todo" routerLinkActive="active" class="nav__container__links__link">Create Todo</a>
 
-    <button (click)="navbarLogout()">Logout header</button>
-}@else{
-    <div>
-        please login
-    </div>
-}
+                    <a (click)="navbarLogout()">Logout</a>
+
+                    </li>
+                }@else {
+                    <li class="nav__container__links_ul__logged-out">
+                        <a routerLink="/register" routerLinkActive="active" class="nav__container__links__link">Register</a>
+
+                        <a routerLink="/login" routerLinkActive="active" class="nav__container__links__link">Login</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+</header>

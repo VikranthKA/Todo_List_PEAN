@@ -1,25 +1,28 @@
-<form action="" class="form-container" [formGroup]="loginForm">
-    <h3 class="login-text">Please Login!</h3>
+<form action="" class="form_" [formGroup]="loginForm">
+    <p class="form__login__text">Please Login!</p>
     <input type="email" 
            name="email" 
            id="email" 
            placeholder="johndoe@gmail.com"
-           [formControl]="email"
+           class="form__input"
+           [formControl]="email" 
     />
-    <h5 class="error" [hidden]="email.valid || email.untouched">Enter an email</h5>
+    <h5 class="form__error" [hidden]="email.valid || email.untouched">Enter an email</h5>
     <input type="password" 
     name="text" 
     id="text" 
     placeholder="secret@123"
+    class="form__input"
+
     [formControl]="password"
     />
-    <h5 class="error" [hidden]="password.valid || password.untouched">Password is required and must be greater than 6 letters</h5>
-        <i class="fab fa-google google-icon"></i>
+    <h5 class="form__error" [hidden]="password.valid || password.untouched">Password is required and must be greater than 6 letters</h5>
 
 
-    <div class="btn-group">
+    <div class="form__btn">
 
-        <button class="btn-success" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+        <button class="form__btn_success" (click)="login()" [disabled]="loginForm.invalid">Login</button>
+        <button class="form__btn_message" routerLink="/register" routerLinkActive="active">Don`t have an account ? register</button>
     </div>
 
 

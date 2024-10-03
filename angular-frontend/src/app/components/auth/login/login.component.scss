@@ -1,0 +1,41 @@
+@import "../../../../scss/mixsin";
+@import "../../../../scss/variables";
+
+$color-red:rgba(0, 255, 55, 0.644);
+
+.form_ {
+    @include container(30%);
+
+
+    &_login__text {
+      font-size: 25px;
+      text-align: center;
+      margin-bottom: 10px;
+      color:$color-primary;
+
+    }
+  
+    &_input {
+      @include input;
+    }
+  
+    &_error {
+      @include error-text;
+    }
+  
+    &_btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap:10px 0 0 0 ;
+
+      &_success {
+        @include btn(#90a4ae);
+      }
+  
+      &_message {
+        @include message;
+      }
+    }
+  }
+  

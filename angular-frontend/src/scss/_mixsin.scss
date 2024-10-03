@@ -1,0 +1,66 @@
+@import "./variables";
+
+@function color($color-name){
+    @return var(--color-#{$color-name})
+};
+
+@mixin container($width:50%,$flexDirection:row){
+    padding: 8% 0 0;
+    width: $width;
+    margin:auto;
+    box-shadow: (3,3,0,0,#171515);
+}
+
+@mixin heading($color:$color-primary){
+    color: $color;
+    font-size: 30px;
+    display: block;
+}
+
+
+@mixin btn($fontcolor:#171515){
+    font-family: 'Roboto';
+    font-size: 15px;
+    font-weight: 900;
+    outline: 0;
+    border: 0;
+    width: 100%;
+    padding: 15px;
+    background:$color-primary;
+    color:$fontcolor;
+    text-transform: uppercase;
+
+}
+
+
+@mixin message($fontcolor:#90a4ae){
+    color:$fontcolor;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    margin:10px auto 0 auto;
+    border: none;
+    background: inherit;
+}
+
+@mixin input($background:#f5f5f5, $fontFamily:'Roboto'){
+    font-family:$fontFamily;
+    width: 100%;
+    border:0;
+    margin: 0 0 15px;
+    padding: 9px;
+    font-size: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    background: $background;
+}
+
+@mixin error-text(){
+    color:rgb(231, 53, 53);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+

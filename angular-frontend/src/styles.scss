@@ -1,12 +1,7 @@
-@import "mixsin.scss";
+@import "./scss/mixsin";
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-
-:root {
-    --color-primary: #0e79b2;
-    --color-secodary: #191923;
-    --color-light: #fbfef9;
-
-}
+@import "./scss/variables";
+@import "./app/components/auth/login/login.component.scss";
 
 * {
     margin: 0;
@@ -17,4 +12,5 @@
 body {
     position: relative;
     font-family: 'Oswald', sans-serif;
+    background: $color-light;
 }

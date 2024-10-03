@@ -1,0 +1,5 @@
+@import "../scss/mixsin";
+
+h1{
+    @include heading;
+}

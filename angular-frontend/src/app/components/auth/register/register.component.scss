@@ -1,0 +1,30 @@
+@import "../../../../scss/mixsin";
+@import "../../../../scss/variables";
+
+.form{
+@include container(35%);
+    &__title{
+        @include heading;
+        text-align: center;
+
+    }
+    &__username,&__email,&__password{
+        @include input
+    }
+    &__error{
+        @include error-text
+    }
+    &__btn{
+
+        &_success{
+            @include btn
+        }
+        &_message{
+            @include message
+        }
+    }
+
+
+
+    
+}

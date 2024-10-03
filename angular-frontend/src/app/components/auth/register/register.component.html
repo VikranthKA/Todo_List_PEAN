@@ -1,7 +1,7 @@
 <form action="" class="form" [formGroup]="registerData">
     <h3 class="form__title">Register Form</h3>
     <input type="text"
-    class="form__username" 
+    class="form__username"  
     name="text" 
     id="text" 
     placeholder="soul society"
@@ -22,8 +22,9 @@
     [formControl]="password"
     />
     <h5 class="form__error" [hidden]="password.valid || password.untouched">Password is required and must be greater than 6 letters</h5>
-    <div class="form__btn__group">
-        <button class="form__btn__success" (click)="register()" [disabled]="registerData.invalid">Register</button>
+    <div class="form__btn">
+        <button class="form__btn_success" (click)="register()" [disabled]="registerData.invalid">Register</button>
+        <button class="form__btn_message" routerLink="/login" routerLinkActive="active">Have account login</button>
 
     </div>
 </form>
