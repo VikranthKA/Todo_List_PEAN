@@ -1,1 +1,15 @@
-<p>all-todo works!</p>
+
+<div class="todo">
+    <app-create-todo></app-create-todo>
+    <ul class="todo__ul">
+    @for(todo of allTodo;track 'id'){
+        <li class="todo__ul__todo">{{todo.title}}</li>
+        <li>{{todo.createdAt | date:"dd-MMM-yy"}}</li>
+        <li><input type="checkbox" value={{todo.completed}}/></li>
+        <button (click)="setUpdateId(todo.id)">Update</button>
+        <button (click)="deleteTodo(todo.id )">Delete</button>
+
+    }
+    
+    </ul>
+</div>

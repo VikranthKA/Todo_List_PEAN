@@ -1,1 +1,11 @@
-<p>create-todo works!</p>
+<div>
+    <input [(ngModel)]="todoObj.title" type="text"/>
+    <input [(ngModel)]="todoObj.description" type="text"/>
+    @if(updateId){
+        <button (click)="updateTodo()">Update</button>
+    }@else {
+
+        <button (click)="addTodo()">submit</button>
+    }
+
+</div>

@@ -26,6 +26,7 @@ export const createTodo = async (req: Request, res: Response) => {
       return res.status(400).json({ error: errors.array() });
     }
     try {
+        console.log(req.body)
         const { title, description } = req.body;
 
         const id = authenticateUser(req);
@@ -40,7 +41,9 @@ export const createTodo = async (req: Request, res: Response) => {
             createdBy: id
         };
 
-        const todo = await Todo.create(newTodo);
+        const todo = await Todo.create(newTodo)
+
+        console.log(todo,"success")
 
         return res.status(201).json({
             message: "Todo created successfully",
